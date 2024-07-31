@@ -46,4 +46,6 @@ RUN apk update \
 EXPOSE 7000
 VOLUME /data
 WORKDIR /data
+
+SHELL ["/bin/ash", "-c"]
 CMD sqlite_web -H 0.0.0.0 -p 7000 -x $SQLITE_DATABASE
