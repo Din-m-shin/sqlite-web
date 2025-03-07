@@ -43,7 +43,7 @@ RUN apk update \
       && pip install --no-cache-dir cython \
       && pip install --no-cache-dir flask peewee sqlite-web \
       && apk del .build-deps
-EXPOSE 8080
+EXPOSE 7000
 VOLUME /data
 WORKDIR /data
-CMD sqlite_web -H 0.0.0.0 -x $SQLITE_DATABASE
+CMD sqlite_web -H 0.0.0.0 -p 7000 -x $SQLITE_DATABASE
